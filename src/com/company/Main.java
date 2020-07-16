@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -27,10 +28,14 @@ public class Main {
             Scanner l_ans=new Scanner(System.in);
             l_path=l_ans.nextLine();
         }
-        else if (Location_change==5 && num==1)
-            l_path="D:\\converted.mp3";
-        else if (Location_change==5 && num==2)
-            l_path="D:\\converted.wav";
+        else if (Location_change==5 && num==1){
+            new File("D:\\converted").mkdir();
+            l_path="D:\\converted/converted.mp3";}
+
+        else if (Location_change==5 && num==2){
+            new File("C:\\Directory1").mkdir();
+            l_path="D:\\converted.wav";}
+        System.out.println("hello");
 
     }
 }
