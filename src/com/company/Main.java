@@ -21,13 +21,16 @@ public class Main {
         System.out.println("If you want to change the location  of the converted file press 5 otherwise press 6 it will be store on D:\\convert/Mp4_To_Mp3.mp3");
         Scanner location=new Scanner(System.in);
         int Location_change=location.nextInt();
+
         if (Location_change==5){
             System.out.println("please enter the location path ......");
             Scanner l_ans=new Scanner(System.in);
             l_path=l_ans.nextLine();
         }
-        else if (Location_change==5)
+        else if (Location_change==5 && num==1)
             l_path="D:\\converted.mp3";
+        else if (Location_change==5 && num==2)
+            l_path="D:\\converted.wav";
 
     }
 }
