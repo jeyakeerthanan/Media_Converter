@@ -29,7 +29,8 @@ public class MP4toWAVconverter extends Converter{
             File file = new File (Main.l_path);
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
-        } catch (IllegalArgumentException e) {
+        }
+        catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
         catch (InputFormatException e) {
