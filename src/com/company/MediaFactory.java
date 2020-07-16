@@ -6,12 +6,12 @@ public class MediaFactory {
 
 
 
-        if("mp4tomp3".equals(conversiontype)){
+        if("y".equals(conversiontype)){
             return  new MP4toMP3converter();
         }
-        if("mp4tomkv".equals(conversiontype)){
-            return  new MP4toMKVconverter();
-        }
+       // if("mp4tomkv".equals(conversiontype)){
+           // return  new MP4toMKVconverter();
+       // }
 
         return null;
     }

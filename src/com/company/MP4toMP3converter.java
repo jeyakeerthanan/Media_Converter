@@ -7,15 +7,15 @@ import java.io.IOException;
 
 public class MP4toMP3converter extends Converter {
 
-    String path="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Media\\mp4tomp3/a.mp4";
-    File vid= new File(path);
-    static String pathout="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Converted_Media\\mp4tomp3-converted/c.mp3";
+    //String path="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Media\\mp4tomp3/a.mp4";
+    File vid= new File(Main.path);
+   // static String pathout="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Converted_Media\\mp4tomp3-converted/c.mp3";
 
 
     @Override
     void convert()throws IllegalArgumentException,EncoderException {
 
-        File target = new File(pathout);
+        File target = new File(Main.l_path);
         AudioAttributes audio = new AudioAttributes();
         audio.setCodec("libmp3lame");
         audio.setBitRate(new Integer(128000));
