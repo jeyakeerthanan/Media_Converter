@@ -7,13 +7,14 @@ import it.sauronsoftware.jave.*;
 
 public class MP4toWAVconverter extends Converter{
 
-    File Audio = new File(Main.l_path);
+    File Audio = new File(Main.path);
 
     @Override
     void convert()throws IllegalArgumentException,EncoderException {
 
         File target = new File(Main.l_path);
         AudioAttributes audio = new AudioAttributes();
+        System.out.println("Converting......");
         audio.setCodec("libmp3lame");
         audio.setBitRate(new Integer(128000));
         audio.setChannels(new Integer(2));

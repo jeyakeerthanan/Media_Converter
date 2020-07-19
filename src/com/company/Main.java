@@ -17,7 +17,7 @@ public class Main {
 
         //get the format that the user want to format
         System.out.println("Enter the converting format!");
-        System.out.println("mp3 or wav or flv or mkv ?");
+        System.out.println("[mp4 to mp3]-enter mp3 or [mp4 to wav]-enter wav or [mp4 to FLV]-enter flv");
         Scanner format=new Scanner(System.in);
         String num=format.nextLine();
 
@@ -32,18 +32,15 @@ public class Main {
             System.out.println("please enter the location path ......");
             Scanner l_ans=new Scanner(System.in);
             l_path=l_ans.nextLine();}
-        if (Location_change==6 && num=="mkv" ) {
-            l_path = "D:\\convert/abc.mkv";
-        }
 
-        if (Location_change==6 && num=="mp3" ){
-           l_path="D:\\convert/abc.mp3";
-       }
-       else if (Location_change==6 && num=="wav" ){
-           l_path.equalsIgnoreCase("D:\\convert/abc.wav");
-       }
+       if (Location_change==6 && num=="y" ){
+           l_path="D:\\convert/1.mp3";
+      }
+     else if (Location_change==6 && num=="w" ){
+          l_path.equalsIgnoreCase("D:\\convert/1.wav");
+      }
 
-        System.out.println(l_path);
+        //System.out.println(l_path);
         MediaFactory factory=new MediaFactory();
 
         Converter converter=factory.getConType(num);
