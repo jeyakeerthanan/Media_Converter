@@ -25,7 +25,7 @@ public class MP4toWAVconverter extends Converter{
         //encoder.encode(vid, target, attrs);
         try {
             encoder.encode(Audio, target, attrs, null);
-            System.out.println("Successfully Converted!! Wav file is opening.....");
+            System.out.println("Successfully Converted!! mp3 file is opening.....");
             File file = new File (Main.l_path);
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
