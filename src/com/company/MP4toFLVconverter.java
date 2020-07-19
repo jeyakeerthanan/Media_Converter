@@ -33,6 +33,10 @@ public class MP4toFLVconverter extends Converter {
             File file = new File (Main.l_path);
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
+            File file1 = new File(Main.path);
+            //delete the source
+            file1.delete();
+            System.out.println("Source file successfully deleted");
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         } catch (InputFormatException e) {
