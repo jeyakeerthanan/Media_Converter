@@ -17,7 +17,7 @@ public class Main {
 
         //get the format that the user want to format
         System.out.println("Enter the converting format!");
-        System.out.println("[mp4 to mp3]-press y or [mp4 to wav]-press n");
+        System.out.println("mp3 or wav or flv or mkv ?");
         Scanner format=new Scanner(System.in);
         String num=format.nextLine();
 
@@ -33,13 +33,13 @@ public class Main {
             Scanner l_ans=new Scanner(System.in);
             l_path=l_ans.nextLine();}
         if (Location_change==6 && num=="mkv" ) {
-            l_path = "D:\\convert/abc.flv";
+            l_path = "D:\\convert/abc.mkv";
         }
 
-        if (Location_change==6 && num=="y" ){
+        if (Location_change==6 && num=="mp3" ){
            l_path="D:\\convert/abc.mp3";
        }
-       else if (Location_change==6 && num=="n" ){
+       else if (Location_change==6 && num=="wav" ){
            l_path.equalsIgnoreCase("D:\\convert/abc.wav");
        }
 
