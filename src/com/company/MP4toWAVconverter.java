@@ -7,14 +7,20 @@ import it.sauronsoftware.jave.*;
 
 public class MP4toWAVconverter extends Converter{
 
-    File Audio = new File(Main.path);
+
 
     @Override
     void convert()throws IllegalArgumentException,EncoderException {
-
-        File target = new File(Main.l_path);
+        String   f_path=Main.l_path+"Mp4ToWAV";
+        File file = new File(f_path);
+        //Creating the directory
+        boolean bool = file.mkdir();
+        System.out.println(f_path+"Folder created");
+        String D_path=f_path+"/"+Main.num1;
+        File Audio = new File(Main.path);
+        File target = new File(D_path);
+        System.out.println("Converting.....");
         AudioAttributes audio = new AudioAttributes();
-        System.out.println("Converting......");
         audio.setCodec("libmp3lame");
         audio.setBitRate(new Integer(128000));
         audio.setChannels(new Integer(2));
@@ -26,10 +32,14 @@ public class MP4toWAVconverter extends Converter{
         //encoder.encode(vid, target, attrs);
         try {
             encoder.encode(Audio, target, attrs, null);
-            System.out.println("Successfully Converted!! mp3 file is opening.....");
-            File file = new File (Main.l_path);
+            System.out.println("Successfully Converted!! wav file is opening.....");
+            File file1 = new File (D_path);
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
+            File file2 = new File(Main.path);
+            //delete the source
+            file2.delete();
+            System.out.println("Source file successfully deleted");
         }
         catch (IllegalArgumentException e) {
             e.printStackTrace();
@@ -46,3 +56,7 @@ public class MP4toWAVconverter extends Converter{
 
     }
 }
+
+
+//String path="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Media\\mp4towav/a.mp4";
+// static String pathout="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Converted_Media\\mp4towav-converted/c.wav";
