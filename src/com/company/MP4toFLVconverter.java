@@ -6,7 +6,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class MP4toMKVconverter extends Converter {
+public class MP4toFLVconverter extends Converter {
 
     @Override
     void convert() throws EncoderException {
@@ -20,7 +20,7 @@ public class MP4toMKVconverter extends Converter {
         VideoAttributes video = new VideoAttributes();
         video.setBitRate(new Integer(160000));
         video.setFrameRate(new Integer(15));
-        video.setCodec("mkv");
+        video.setCodec("flv");
         video.setCodec(VideoAttributes.DIRECT_STREAM_COPY);
         EncodingAttributes attrs = new EncodingAttributes();
         attrs.setFormat("mp4");
@@ -29,7 +29,7 @@ public class MP4toMKVconverter extends Converter {
         Encoder encoder = new Encoder();
         try {
             encoder.encode(source, target, attrs);
-            System.out.println("Successfully Converted!! mkv file is opening.....");
+            System.out.println("Successfully Converted!! flv file is opening.....");
             File file = new File (Main.l_path);
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
@@ -46,5 +46,5 @@ public class MP4toMKVconverter extends Converter {
     }
 }
 
-//String path="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Media\\mp4tomkv/a.mp4";
-// static String pathout="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Converted_Media\\mp4tomkv-converted/c.mkv";
+//String path="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Media\\mp4toflv/a.mp4";
+// static String pathout="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Converted_Media\\mp4toflv-converted/c.flv";

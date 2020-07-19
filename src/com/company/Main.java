@@ -32,11 +32,14 @@ public class Main {
             System.out.println("please enter the location path ......");
             Scanner l_ans=new Scanner(System.in);
             l_path=l_ans.nextLine();}
+        if (Location_change==6 && num=="mkv" ) {
+            l_path = "D:\\convert/abc.flv";
+        }
 
         if (Location_change==6 && num=="y" ){
            l_path="D:\\convert/abc.mp3";
        }
-       else if (Location_change==6 && num=="N" ){
+       else if (Location_change==6 && num=="n" ){
            l_path.equalsIgnoreCase("D:\\convert/abc.wav");
        }
 
