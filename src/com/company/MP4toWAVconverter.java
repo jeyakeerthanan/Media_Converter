@@ -7,14 +7,13 @@ import it.sauronsoftware.jave.*;
 
 public class MP4toWAVconverter extends Converter{
 
-    File Audio = new File(Main.path);
+
 
     @Override
     void convert()throws IllegalArgumentException,EncoderException {
-
+        File Audio = new File(Main.path);
         File target = new File(Main.l_path);
         AudioAttributes audio = new AudioAttributes();
-        System.out.println("Converting......");
         audio.setCodec("libmp3lame");
         audio.setBitRate(new Integer(128000));
         audio.setChannels(new Integer(2));
@@ -26,7 +25,7 @@ public class MP4toWAVconverter extends Converter{
         //encoder.encode(vid, target, attrs);
         try {
             encoder.encode(Audio, target, attrs, null);
-            System.out.println("Successfully Converted!! mp3 file is opening.....");
+            System.out.println("Successfully Converted!! wav file is opening.....");
             File file = new File (Main.l_path);
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
@@ -46,3 +45,7 @@ public class MP4toWAVconverter extends Converter{
 
     }
 }
+
+
+//String path="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Media\\mp4towav/a.mp4";
+// static String pathout="C:\\Users\\Nishanthan\\Desktop\\Integrative_Assignment\\Converted_Media\\mp4towav-converted/c.wav";
