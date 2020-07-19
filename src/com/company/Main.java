@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static String l_path;
     public static String path;
+    public static String num1;
     public static void main(String[] args) throws EncoderException {
       //input the path of the file that need to convert
         System.out.println("Enter the path of the file that you want to convert?");
@@ -21,10 +22,17 @@ public class Main {
         Scanner format=new Scanner(System.in);
         String num=format.nextLine();
 
+        System.out.println("Enter the file name!");
+        Scanner format1=new Scanner(System.in);
+         num1=format.nextLine();
+
         // change the location of the converted file
         System.out.println("If you want to change the location  of the converted file press 5 otherwise press 6 it will be store on D:\\convert/1.mp3/D:\\convert/1.wav");
        Scanner location=new Scanner(System.in);
         int Location_change=location.nextInt();
+
+
+
 
 
 

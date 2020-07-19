@@ -14,8 +14,15 @@ public class MP4toMP3converter extends Converter {
 
     @Override
     void convert()throws IllegalArgumentException,EncoderException {
+        String   f_path=Main.l_path+"Mp4ToMp3";
+        File file = new File(f_path);
+        //Creating the directory
+        boolean bool = file.mkdir();
+        System.out.println(f_path+"Folder created");
+        String D_path=f_path+"/"+Main.num1;
         File vid= new File(Main.path);
-        File target = new File(Main.l_path);
+        File target = new File(D_path);
+        System.out.println("Converting.....");
         AudioAttributes audio = new AudioAttributes();
         audio.setCodec("libmp3lame");
         audio.setBitRate(new Integer(128000));
@@ -29,9 +36,19 @@ public class MP4toMP3converter extends Converter {
         try {
             encoder.encode(vid, target, attrs, null);
             System.out.println("Successfully Converted!! mp3 file is opening.....");
-            File file = new File (Main.l_path);
+
+            //Creating a File object
+            File file1 = new File(D_path);
+            //Creating the directory
+            boolean bool1 = file.mkdir();
+
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
+
+            File file2 = new File(Main.path);
+            //delete the source
+            file2.delete();
+            System.out.println("Source file successfully deleted");
         } catch (IllegalArgumentException e) {
 
             e.printStackTrace();
